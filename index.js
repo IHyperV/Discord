@@ -7,68 +7,73 @@ app.get('/', (req, res) => res.send('Hello World!'));
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
 // ================= START BOT CODE ===================
+const fs = require('fs');
 const Discord = require('discord.js');
+const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
+client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+
+	// set a new item in the Collection
+	// with the key as the command name and the value as the exported module
+	client.commands.set(command.name, command);
+}
+
+client.on('message',  message => {
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+	const args = message.content.slice(prefix.length).trim().split(/ +/);
+	const commandName = args.shift().toLowerCase();
+
+	const command = client.commands.get(commandName)
+		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+
+	if (!command) return;
+
+	if (command.guildOnly && message.channel.type === 'dm') {
+		return message.reply('I can\'t execute that command inside DMs!');
+	}
+
+	if (command.permissions) {
+		const authorPerms = message.channel.permissionsFor(message.author);
+		if (!authorPerms || !authorPerms.has(command.permissions)) {
+			return message.reply('Yikes you dont have perms for that');
+		}
+	}
+
+	if (command.args && !args.length) {
+		let reply = `You didn't provide any arguments, ${message.author}!`;
+
+		if (command.usage) {
+			reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+		}
+
+		return message.channel.send(reply);
+	}
+
+	try {
+		command.execute(message, args);
+	} catch (error) {
+		console.error(error);
+		message.reply('there was an error trying to execute that command!');
+	}
+});
+
+
+
 
 client.on("ready", () =>{
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setPresence({
-        status: "online",  //You can show online, idle....
-        game: {
-            name: "Using !help",  //The message shown
-            type: "STREAMING" //PLAYING: WATCHING: LISTENING: STREAMING:
-        }
-   });
+    //client.user.setGame ("OMM")
+        
 });
 
-// Create an event listener for messages
-client.on('message', message => {
-  // If the message is "what is my avatar"
-  if (message.content === '?avatar') {
-    // Send the user's avatar URL
-    message.reply(message.author.displayAvatarURL());
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === '?ping') {
-    msg.reply('pong!');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === '?invite') {
-    msg.reply('https://discord.gg/Dg8b53f');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === '.idk') {
-    msg.reply('.idk');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === '?owner') {
-    msg.reply('go look dick face');
-  }
-});
-
-client.on('message', msg => {
-  if (msg.content === '?love') {
-    msg.reply('love is not real ');
-  }
-});
-
-//client.on('message' , msg => {
- // if (msg.content === '?help'){
-  // msg.reply('go help your self fucker');
-  // console.log('success')
- // }
-//});
 
 client.on('message' , msg => {
-  if (msg.content === '?afk'){
+  if (msg.content === `${prefix}afktest`){
     msg.reply('nobody cares');
     console.log('someone went afk')
   }
@@ -77,52 +82,7 @@ client.on('message' , msg => {
 
 
 
-client.on('message', msg => {
-  if (msg.content === '?suicide') {
-    msg.reply('well id tell yo how to go lights out but its against discords tos anyways get help CALL 1-800-273-8255 or Text SAFE TO 741-741')
-    msg.reply('https://www.youtube.com/watch?v=VJe6LLoGgR8')
-   msg.reply('well id tell yo how to go lights out but its against discords tos anyways get help CALL 1-800-273-8255 or Text SAFE TO 741-741')
-    msg.reply('https://www.youtube.com/watch?v=VJe6LLoGgR8')
-     msg.reply('well id tell yo how to go lights out but its against discords tos anyways get help CALL 1-800-273-8255 or Text SAFE TO 741-741')
-    msg.reply('https://www.youtube.com/watch?v=VJe6LLoGgR8')
-    console.log('help')
-    console.log()
-    
-    ;
-  }
-});
-
-
-//client.change_presence(activity=discord.Game(name='You'))
-
-// or, for watching:
-//activity = discord.Activity(name='my activity', type=discord.ActivityType.watching)
-//client.change_presence(activity=activity)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// You really don't want your token here since your repl's code
-// is publically available. We'll take advantage of a Repl.it 
-// feature to hide the token we got earlier. 
 client.login(process.env.DISCORD_TOKEN);
