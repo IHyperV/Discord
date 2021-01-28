@@ -1,0 +1,5 @@
+.env
+.vscode/launch.json
+node_modules/
+secret.json
+test/
