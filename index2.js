@@ -57,7 +57,7 @@ i18n.configure({
  */
 client.on("ready", () => {
   console.log(`${client.user.username} ready!`);
-  client.user.setActivity(`updating soon watch out`, { type: "WATCHING" });
+  client.user.setActivity(`You`, { type: "WATCHING" });
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
