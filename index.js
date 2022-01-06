@@ -18,7 +18,7 @@ const db = require("quick.db");
 const { GiveawaysManager } = require("discord-giveaways");
 
 const nz_date_string = new Date().toLocaleString("en-US", {
-	timeZone: "Asia/Hong_Kong"
+	timeZone: "America/New_York"
 });
 
 client.commands = new Collection();
