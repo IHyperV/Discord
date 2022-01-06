@@ -1,7 +1,0 @@
-.env
-.vscode/launch.json
-node_modules/
-secret.json
-test/
-backup/
-old code that dont work/
