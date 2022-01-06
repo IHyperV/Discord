@@ -1,31 +1,56 @@
 {
-  "name": "discord-test",
+  "name": "Glowking",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "description": "Discord-Multi-Purpose Bot",
+  "author": "RealKoolisw",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "code-format": "prettier --write ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "url": "git+https://github.com/glowking/Discord.git"
+  },
+  "license": "MIT",
   "dependencies": {
-    "@discordjs/opus": "^0.4.0",
-    "array-move": "^3.0.1",
-    "discord-music-player": "^6.4.1",
+    "@discordjs/opus": "^0.7.0",
+    "array-move": "^4.0.0",
+    "blapi": "^2.2.1",
+    "canvacord": "^5.2.3",
+    "cryptr": "^6.0.2",
+    "discord-giveaways": "^4.5.1",
     "discord.js": "^12.5.3",
+    "distube": "^2.8.18",
+    "dotenv": "^10.0.0",
+    "enmap": "^5.8.7",
     "express": "^4.17.2",
-    "fd": "0.0.3",
-    "ffmpeg": "0.0.4",
-    "fs": "0.0.1-security",
+    "ffmpeg-static": "^4.4.0",
+    "fs": "^0.0.1-security",
     "i18n": "^0.13.4",
     "lyrics-finder": "^21.7.0",
-    "opusscript": "0.0.7",
-    "restart": "^2.0.0",
+    "moment": "^2.29.1",
+    "ms": "^2.1.3",
+    "node-fetch": "^2.6.1",
+    "opusscript": "^0.0.8",
+    "os": "^0.1.2",
+    "pet-pet-gif": "^1.0.9",
+    "quick.db": "^7.1.3",
+    "request": "^2.88.2",
     "simple-youtube-api": "^5.2.1",
-    "soundcloud-downloader": "^0.2.4",
+    "soundcloud-downloader": "^1.0.0",
     "string-progressbar": "^1.0.4",
+    "superagent": "^6.1.0",
+    "topgg-autoposter": "^2.0.1",
+    "twemoji-parser": "^13.1.0",
+    "urban": "^0.3.4",
+    "weather-js": "^2.0.0",
     "ytdl-core": "^4.9.2",
     "ytdl-core-discord": "^1.3.1"
+  },
+  "devDependencies": {
+    "prettier": "2.5.1"
   }
 }
