@@ -4,7 +4,4 @@ node_modules/
 secret.json
 test/
 backup/
-data/
-json.sqlite
-package-lock.json
-node_modules/
+old code that dont work/
