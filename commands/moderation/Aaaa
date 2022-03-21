@@ -1,0 +1,6 @@
+client.users.fetch('USER_ID').then((user) => {
+try {
+	user.send("txt");	
+} catch (err){
+	console.log("err")
+}

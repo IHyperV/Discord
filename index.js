@@ -50,7 +50,7 @@ client.distube = new DisTube(client, {
 	youtubeDL: true,
 	updateYouTubeDL: true,
 	youtubeCookie:
-		"GPS=1; YSC=w5dGoHzqQRI; VISITOR_INFO1_LIVE=B4ElBqxSDv4; PREF=tz=Asia.Hong_Kong"
+		"GPS=1; YSC=w5dGoHzqQRI; VISITOR_INFO1_LIVE=B4ElBqxSDv4; PREF=tz=America/New_York"
 });
 
 if (!db.get("giveaways")) db.set("giveaways", []);
