@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "description": "Discord-Multi-Purpose Bot",
-  "author": "RealKoolisw",
+  "author": "Glowking",
   "scripts": {
     "start": "node index.js",
     "code-format": "prettier --write ."
