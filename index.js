@@ -33,7 +33,7 @@ client.mapss.set("uptimedate", nz_date_string);
 ["command", "event", "music"].forEach(x =>
 	require(`./handlers/${x}.js`)(client)
 );
-["alwaysOn", "http"].forEach(x => require(`./server/${x}`)());
+["alwaysOn", "http", "jsondata"].forEach(x => require(`./server/${x}`)());
 
 client.settings = new Enmap({
 	name: "settings",
