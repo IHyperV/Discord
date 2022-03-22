@@ -18,7 +18,7 @@ const db = require("quick.db");
 const { GiveawaysManager } = require("discord-giveaways");
 
 const nz_date_string = new Date().toLocaleString("en-US", {
-	timeZone: "Asia/Hong_Kong"
+	timeZone: "America/New_York"
 });
 
 client.commands = new Collection();
@@ -33,7 +33,7 @@ client.mapss.set("uptimedate", nz_date_string);
 ["command", "event", "music"].forEach(x =>
 	require(`./handlers/${x}.js`)(client)
 );
-["alwaysOn", "http"].forEach(x => require(`./server/${x}`)());
+["alwaysOn", "http",].forEach(x => require(`./server/${x}`)());
 
 client.settings = new Enmap({
 	name: "settings",
@@ -50,7 +50,7 @@ client.distube = new DisTube(client, {
 	youtubeDL: true,
 	updateYouTubeDL: true,
 	youtubeCookie:
-		"GPS=1; YSC=w5dGoHzqQRI; VISITOR_INFO1_LIVE=B4ElBqxSDv4; PREF=tz=Asia.Hong_Kong"
+		"GPS=1; YSC=w5dGoHzqQRI; VISITOR_INFO1_LIVE=B4ElBqxSDv4; PREF=tz=America/New_York"
 });
 
 if (!db.get("giveaways")) db.set("giveaways", []);

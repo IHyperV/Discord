@@ -1,3 +1,5 @@
+//require ("./hitable.js")
+
 const fetch = require("node-fetch");
 function alwaysOn() {
 	setInterval(async () => {

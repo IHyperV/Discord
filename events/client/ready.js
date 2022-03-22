@@ -3,9 +3,12 @@ const fs = require("fs");
 module.exports = async client => {
 	console.log("Ready!");
 	const activities = [
-		`${client.guilds.cache.size} Servers`,
-		`${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)} Users`,
-		"By Glowking"
+		`?help | ${client.guilds.cache.size} Servers`,
+		`?help | ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)} Users`,
+		"Glowking Play",
+    "You | ?help",
+    "?help",
+    "Hello World | ?help"
 	];
 	const commandFiles = fs
 		.readdirSync("./slash-commands")
@@ -34,7 +37,7 @@ module.exports = async client => {
 	setInterval(
 		() =>
 			client.user.setActivity(
-				`?help | ${activities[i++ % activities.length]}`,
+				`${activities[i++ % activities.length]}`,
 				{ type: "WATCHING" }
 			),
 		15000
