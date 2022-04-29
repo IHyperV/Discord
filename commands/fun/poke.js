@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
 			}`
 		)
 		.setImage(body.url)
-		.setFooter("© Draconian Workshop");
+		.setFooter("© Glowking");
 	message.channel.send({ embed });
 };
 

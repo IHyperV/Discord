@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
 			.setColor("#ff9900")
 			.setTitle("Heres your Hentai Image")
 			.setImage(body.url)
-			.setFooter("© Draconian Workshop");
+			.setFooter("© Glowking");
 		message.channel.send({ embed });
 	} else {
 		message.channel.send("This isn't NSFW channel!");

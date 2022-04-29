@@ -12,7 +12,7 @@ module.exports.run = (client, msg, args) => {
 					.setColor("#00ff00")
 					.setTitle("Holo here")
 					.setFooter(
-						`©2020 Draconian Workshop | This command requested by ${msg.author.username}#${msg.author.discriminator}`
+						`©2022 Glowking | This command requested by ${msg.author.username}#${msg.author.discriminator}`
 					);
 
 				msg.channel.send(emb);
