@@ -5,12 +5,12 @@ module.exports = async client => {
 	const activities = [
 		`?help | ${client.guilds.cache.size} Servers`,
 		`?help | ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)} Users`,
-		"Glowking Play",
-    "You | ?help",
-    "?help",
-    "Hello World | ?help",
-	"Something is Coming",
-	"It was sure Fun"
+		"Hyper Play",
+         "You | ?help",
+        "?help",
+       "Hello World | ?help",
+	   "Something is Coming",
+	   "It was sure Fun"
 	];
 	const commandFiles = fs
 		.readdirSync("./slash-commands")

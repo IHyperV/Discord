@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 	const rightNow = Date.now();
-	if (message.author.id != process.env.OWNERID)
+	if (message.author.id != `459742547305299981`)
 		return message.channel.send("Only my developer can use this command...");
 	const user = message.mentions.users.first();
 	if (!user) message.reply(`Please mention someone to get data`);

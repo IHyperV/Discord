@@ -8,3 +8,7 @@ data/
 json.sqlite
 package-lock.json
 node_modules/
+commands/custom/DONTCOMMIT
+authf
+bannedkey
+

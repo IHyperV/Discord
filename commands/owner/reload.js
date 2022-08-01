@@ -3,7 +3,7 @@ const fs = require("fs");
 const config = require("../../config/config.json");
 
 module.exports.run = async (client, message, args) => {
-	if (message.author.id != process.env.OWNERID)
+	if (message.author.id != '459742547305299981')
 		return message.channel.send("Only my developer can use this command...");
 
 	message.channel.send(

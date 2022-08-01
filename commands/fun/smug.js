@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
 	const embed = new Discord.MessageEmbed()
 		.setColor("#ff9900")
 		.setImage(body.url)
-		.setFooter("© Glowking");
+		.setFooter("© Draconian Workshop");
 	message.channel.send({ embed });
 };
 

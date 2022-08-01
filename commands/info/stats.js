@@ -36,7 +36,7 @@ module.exports.run = async (client, message) => {
 					true
 				)
 				.setFooter(
-					"Glowking 2021",
+					"Draconian 2021",
 					"https://cdn.koolisw.tk/file/kooliswCDN/79654c28218d88a8cfefe9c01f6d338c.png"
 				);
 			return message.channel.send({ embed });

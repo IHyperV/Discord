@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const settings = require("../../config/settings.json");
 
 exports.run = async (client, message, args) => {
-	if (message.author.id != process.env.OWNERID)
+	if (message.author.id != `459742547305299981`)
 		return message.channel.send("Only my developer can use this command...");
 	message.channel.send(
 		":warning: When database reset, all custom prefix and infos will be deleted! Type `confirm` to confirm! Or being cancelled in `20` seconds."
