@@ -1,5 +1,5 @@
 <p align="center">
-            <h1>Glowking Discord Bot</h1> </center>
+            <h1>HyperX Discord Bot</h1> </center>
 
 
 
@@ -7,7 +7,7 @@ Glowking Discord bot is an epic multi-purpose bot, which is very powerful and co
 
 ## Our Bot Features:
 
-Glowking Discord Bot offers:
+HyperX Discord Bot offers:
 
 - :battery: 24/7 Full Uptime with high stability
 - :smiley: Easy to use
@@ -37,7 +37,7 @@ We have more than 80 commands in this bot, and they are **featured** and having 
 - :electric_plug: **Utility:** `weather`, `aes256`, `embed`, `enlarge`, and **4 more!**
 
 
-Glowking Discord Bot Made by Glowking, project [Here](https://github.com/glowking/Discord)
+HyperX Discord Bot Made by HyperV, project [Here](https://github.com/iHyperV/Discord)
 
 ## Self-Hosting & Development
 
